@@ -30,3 +30,6 @@ class Loja(models.Model):
     cep= models.CharField(max_length=11)
     email= models.EmailField(max_length=100)
     telefone= models.CharField(max_length=120)
+
+class Pagamento(models.Model):
+    nome=models.CharField(max_length=120)
