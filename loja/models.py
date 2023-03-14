@@ -33,3 +33,6 @@ class Loja(models.Model):
 
 class Pagamento(models.Model):
     nome=models.CharField(max_length=120)
+
+class Cor(models.Model):
+    nome=models.CharField(max_length=120)
