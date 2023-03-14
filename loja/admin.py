@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Fornecedor, Categoria, Cliente, Loja, Pagamento, Cor, Tamanho
+from .models import Fornecedor, Categoria, Cliente, Loja, Pagamento, Cor, Tamanho, Produto
 
 admin.site.register(Fornecedor)
 admin.site.register(Categoria)
@@ -9,3 +9,4 @@ admin.site.register(Loja)
 admin.site.register(Pagamento)
 admin.site.register(Cor)
 admin.site.register(Tamanho)
+admin.site.register(Produto)

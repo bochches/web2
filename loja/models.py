@@ -39,3 +39,12 @@ class Cor(models.Model):
 
 class Tamanho(models.Model):
     descricao= models.CharField(max_length=120)
+
+class Produto(models.Model):
+    cor= models.ForeignKey(Cor, on_delete=models.CASCADE)
+    fornecedor= models.ForeignKey(Fornecedor, on_delete=models.CASCADE)
+    imagem= models.ImageField(upload_to='imagem')
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    tamanho= models.ForeignKey(Tamanho, on_delete=models.CASCADE)
+    descricao= models.CharField(max_length=120)
+    valor= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
