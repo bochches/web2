@@ -48,3 +48,10 @@ class Produto(models.Model):
     tamanho= models.ForeignKey(Tamanho, on_delete=models.CASCADE)
     descricao= models.CharField(max_length=120)
     valor= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
+
+class Pedido(models.Model):
+    data= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
+
+class Estoque(models.Model):
+    quantidade= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
+    produto= models.ForeignKey(Produto, on_delete=models.CASCADE)
