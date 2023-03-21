@@ -55,3 +55,9 @@ class Pedido(models.Model):
 class Estoque(models.Model):
     quantidade= models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
     produto= models.ForeignKey(Produto, on_delete=models.CASCADE)
+
+class Carrinho(models.Model):
+    produto= models.ForeignKey(Produto, on_delete=models.CASCADE)
+    cliente= models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    pagamento= models.ForeignKey(Pagamento, on_delete=models.CASCADE)
+    quantidade = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
