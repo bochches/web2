@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'loja.apps.LojaConfig',
     'rest_framework',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [

@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('loja.urls')),
+    path('home/', include('loja.urls')), #resgatar a pag index como sendo home
 ]
