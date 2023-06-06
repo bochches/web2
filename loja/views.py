@@ -1,13 +1,32 @@
 from django.shortcuts import render
+from rest_framework import generics
+from .serializers import TamanhoSerializers, CorSerializers, CategoriaSerializers, FornecedorSerializers, ClienteSerializers, LojaSerializers, PagamentoSerializers
+from .models import Cor, Tamanho, Categoria, Fornecedor, Cliente, Loja, Pagamento
 
-from rest_framework.response import Response
-from rest_framework.renderers import TemplateHTMLRenderer
-from rest_framework.views import APIView
+class CorListAPIView(generics.ListAPIView):
+    queryset = Cor.objects.all()
+    serializer_class = CorSerializers
 
-class IndexPage(APIView):
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'page/index.html'
-    #resgatar o html
+class TamanhoListAPI2(generics.ListAPIView):
+    queryset = Tamanho.objects.all()
+    serializer_class = TamanhoSerializers
 
-    def get(self, request):
-        return Response({})
+class CategoriaListAPIView(generics.ListCreateAPIView):
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializers
+
+class FornecedorListAPIView(generics.ListCreateAPIView):
+    queryset = Fornecedor.objects.all()
+    serializer_class = FornecedorSerializers
+
+class ClienteListAPIView(generics.ListCreateAPIView):
+    queryset = Cliente.objects.all()
+    serializer_class = ClienteSerializers
+
+class LojaListAPIView(generics.ListCreateAPIView):
+    queryset = Loja.objects.all()
+    serializer_class = LojaSerializers
+
+class PagamentoListAPIView(generics.ListCreateAPIView):
+    queryset = Pagamento.objects.all()
+    serializer_class = PagamentoSerializers
