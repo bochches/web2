@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Cor, Tamanho, Categoria, Fornecedor, Cliente, Loja, Pagamento
+from .models import Cor, Tamanho, Categoria, Fornecedor, Cliente, Loja, Pagamento, Produto, Pedido, Estoque, Carrinho
 class CorSerializers(serializers.ModelSerializer):
     class Meta:
         model = Cor
@@ -33,3 +33,23 @@ class PagamentoSerializers(serializers.ModelSerializer):
     class Meta:
         model = Pagamento
         fields = ('nome',)
+
+class ProdutoSerialisers(serializers.ModelSerializer):
+    class Meta:
+        model = Produto
+        fields = ('cor', 'fornecedor', 'imagem', 'categoria', 'tamanho', 'descricao', 'valor',)
+
+class PedidoSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Pedido
+        fields = ('data',)
+
+class EstoqueSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Estoque
+        fields = ('quantidade', 'produto',)
+
+class CarrinhoSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Carrinho
+        fields = ('produto', 'cliente', 'pagamento', 'quantidade',)

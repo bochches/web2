@@ -86,4 +86,3 @@ class Carrinho(models.Model):
     cliente= models.ForeignKey(Cliente, on_delete=models.CASCADE)
     pagamento= models.ForeignKey(Pagamento, on_delete=models.CASCADE)
     quantidade = models.DecimalField(null=True, blank=True, decimal_places=2, max_digits=11)
-
